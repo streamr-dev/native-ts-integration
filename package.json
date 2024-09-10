@@ -1,0 +1,22 @@
+{
+  "name": "native-ts-integration",
+  "version": "1.0.0",
+  "description": "Testing tool between the native-sdk and typescript implementations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "Streamr Network",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.3.3",
+    "@streamr/trackerless-network": "./network/packages/trackerless-network",
+    "@streamr/dht": "./network/packages/dht",
+    "@streamr/utils": "./network/packages/utils",
+    "@streamr/browser-test-runner": "./network/packages/browser-test-runner"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "18.2.0"
+  }
+}
