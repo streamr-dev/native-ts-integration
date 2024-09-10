@@ -3,7 +3,9 @@
 ## Install
 
 `./install.sh`
+
 `npm i`
+
 `npm run build`
 
 ## Run subscriber
