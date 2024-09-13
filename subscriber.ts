@@ -1,5 +1,5 @@
 import { createNetworkNode, StreamMessage } from '@streamr/trackerless-network'
-import { hexToBinary, StreamPartIDUtils } from '@streamr/utils'
+import { hexToBinary, binaryToUtf8,StreamPartIDUtils } from '@streamr/utils'
 import { NodeType } from '@streamr/dht'
 
 const run = async () => {
@@ -31,7 +31,9 @@ const run = async () => {
     await node.start()
     await node.join(streamPartId)
     node.addMessageListener((message: StreamMessage) => {
-        console.log(`Received message: ${message}`)
+        if (message.body.oneofKind === 'contentMessage') {
+            console.log(`Received message: ${binaryToUtf8(message.body.contentMessage.content)}`)
+        }
     })
     console.log('Ready to receive messages')
 }
