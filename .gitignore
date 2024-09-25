@@ -1,3 +1,5 @@
 network
 dist
 node_modules
+output.log
+server.pid
