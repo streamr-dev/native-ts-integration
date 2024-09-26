@@ -9,5 +9,3 @@ if [ ! -d "network" ]; then
     npm install
     npm run build
 fi
-
-
