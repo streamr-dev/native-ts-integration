@@ -3,3 +3,4 @@ dist
 node_modules
 output.log
 server.pid
+proxyEthereumAddress.txt

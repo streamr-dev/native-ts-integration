@@ -4,8 +4,7 @@
   "description": "Testing tool between the native-sdk and typescript implementations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Streamr Network",
   "license": "MIT",

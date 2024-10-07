@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMMAND="node dist/subscriber.js 0xa000000000000000000000000000000000000000#01"
+COMMAND="npx ts-node subscriber.ts 0xa000000000000000000000000000000000000000#01 --local"
 
 # Start the command in the background and capture its output
 $COMMAND > output.log 2>&1 &
@@ -25,6 +25,11 @@ while ! check_output && [ $counter -lt $timeout ]; do
     sleep 1
     ((counter++))
 done
+
+# Print the contents of output.log
+echo "Server output:"
+cat output.log
+
 
 # Check if we got the desired output
 if check_output; then
