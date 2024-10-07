@@ -87,7 +87,7 @@ const run = async () => {
             console.log(`Received message: ${binaryToUtf8(message.body.contentMessage.content)}`)
         }
     })
-    
+    console.log('Subscribed to streamPartId ' + stringStreamPartId)
     console.log('Ready to receive messages')
     if (useLocalEntryPoint) {
         console.log('Using local entry point, the messages will not be seen by other subscribers')
