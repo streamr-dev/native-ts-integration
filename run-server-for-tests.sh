@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMMAND="npx ts-node subscriber.ts 0xa000000000000000000000000000000000000000#01 --local"
+COMMAND="node dist/subscriber.js 0xa000000000000000000000000000000000000000#01 --local"
 
 # Start the command in the background and capture its output
 $COMMAND > output.log 2>&1 &

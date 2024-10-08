@@ -8,4 +8,5 @@ if [ ! -d "network" ]; then
     npm run bootstrap
     cd ..
     npm install
+    npm run build
 fi
