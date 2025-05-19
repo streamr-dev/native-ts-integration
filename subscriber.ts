@@ -14,7 +14,7 @@ const run = async () => {
     const WEBSOCKET_PORT = 44211
     
     if (!stringStreamPartId) {
-        console.error('Usage: node subscriber.js <streamPartId> [--local]')
+        console.error('Usage: node subscriber.js <streamPartId> [--local] [--autocertify]')
         process.exit(1)
     }
 
