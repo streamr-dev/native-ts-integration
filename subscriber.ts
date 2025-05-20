@@ -8,12 +8,13 @@ const run = async () => {
 
     const stringStreamPartId = process.argv[2]
     const useLocalEntryPoint = process.argv.length > 3 && process.argv[3] === "--local"
+    const autocertify = process.argv.length > 4 && process.argv[4] === "--autocertify"
 
     const LOCAL_NODE_ID_FILE = path.join(__dirname, 'proxyEthereumAddress.txt')
     const WEBSOCKET_PORT = 44211
     
     if (!stringStreamPartId) {
-        console.error('Usage: node subscriber.js <streamPartId> [--local]')
+        console.error('Usage: node subscriber.js <streamPartId> [--local] [--autocertify]')
         process.exit(1)
     }
 
@@ -71,7 +72,9 @@ const run = async () => {
         layer0: {
             peerDescriptor: localPeerDescriptor,
             entryPoints: entryPoints,
-            websocketServerEnableTls: false,
+            websocketServerEnableTls: true,
+            autoCertifierConfigFile: autocertify ? "~/.streamr/certificate.json" : undefined,
+            autoCertifierUrl: autocertify ? "https://ns1.streamr-nodes.xyz:59833" : undefined,
             websocketPortRange: {min: WEBSOCKET_PORT, max: WEBSOCKET_PORT}
         },
         networkNode: {
